@@ -1,3 +1,11 @@
+let d1=document.getElementById('demo');
+d1.addEventListener('mouseover',function(event){
+    event.target.style.color="purple";
+    setTimeout(function(){
+        event.target.style.color="";
+    }, 3000);
+},false);
+
 function function1(){
     document.getElementById('demo').style.color="#ff0000";
 }
