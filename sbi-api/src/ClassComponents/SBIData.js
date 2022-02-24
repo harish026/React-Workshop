@@ -5,13 +5,22 @@ export default class SBIData extends Component{
     constructor(){
         super();
         this.state={
-            data:[]
+            data:[],
+            value :"SBI"
         }
     }
+    onChange = event => {
+        this.setState({
+          value: event.target.value
+        })
+      }
     render(){
         return(
-            <div style={{"textAlign":"center", "margin":"10%", "backgroundColor":"skyblue","padding":"20PX"}}>
-                <h3 style={{"color":"green"}}>SBI {this.state.data.DISPTYP}</h3>
+            <div style={{"textAlign":"center","display":"inline-block", "backgroundColor":"skyblue","padding":"20PX"}}>
+                {/* <label>enter the stock name : </label> */}
+                {/* <input onChange={this.onChange}></input>
+                <p>{this.state.value}{this.getData()}</p> */}
+                <h3 style={{"color":"green"}}>{this.state.data.DISPID} {this.state.data.DISPTYP}</h3>
                 <br />
                 <div className="card" style={{"padding":"10px","margin":"20px"}}>
                     <div className="card-header">
@@ -50,7 +59,7 @@ export default class SBIData extends Component{
     }
     getData=()=>{
         //debugger;
-        var dataPromise=axios.get("https://priceapi.moneycontrol.com/pricefeed/bse/equitycash/SBI");
+        var dataPromise=axios.get("https://priceapi.moneycontrol.com/pricefeed/bse/equitycash/"+this.props.stock);
         dataPromise.then((response)=>{
             this.setState({
                 data:response.data.data
@@ -59,7 +68,8 @@ export default class SBIData extends Component{
     }
     componentDidMount(){
         //debugger;
-        this.getData();
+        setInterval(this.getData(), 1000);
+        
     }
 
 }
