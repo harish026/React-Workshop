@@ -10,14 +10,27 @@ export default function EmployeeList(){
         })
     })
 
+    const GetData = () => {
+
+        var dataPromise = Axios.get("https://localhost:5003/api/Book");
+        dataPromise.then((response) => {
+            setEmployeeList(response.data);
+        })
+    }
+    function DeleteEmployee(event) {
+        axios.delete("https://localhost:5003/api/Book" + event.target.bid).then(() => {
+            alert("Employee is Deleted");
+            GetData();
+        })
+    }
+
     return(
         <div>
         <h1>Employee List is Given Below...</h1>
         {empList.map((employee)=> {
             return (
                 
-                <EmployeeDetailscomponent {...employee}></EmployeeDetailscomponent>
-                /* <button value="delete"></button> */
+                <EmployeeDetailscomponent key={empList.bid} DeleteEmployee={DeleteEmployee} {...employee}></EmployeeDetailscomponent>
                 
 
             )
