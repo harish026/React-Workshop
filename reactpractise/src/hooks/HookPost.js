@@ -4,13 +4,13 @@ import { useEffect, useState } from 'react';
 
 export default function HookPost() {
 
-    var [bid, setabid] = useState(0);
+    var [bid, setbid] = useState(0);
     var [name, setname] = useState('');
     var [createdAt, setcreatedAt] = useState('');
     
     
     var onBidChange = (event) => {
-        setabid  (
+        setbid  (
             event.target.value
         )
     }
@@ -71,8 +71,6 @@ function AddEmployee(event)
             <h1>{bid}</h1><br/>
             <h1>{name}</h1><br/>
             <h1>{createdAt}</h1><br/>
-
-            
         </form>
     )
 }

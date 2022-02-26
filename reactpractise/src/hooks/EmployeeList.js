@@ -30,7 +30,7 @@ export default function EmployeeList(){
         {empList.map((employee)=> {
             return (
                 
-                <EmployeeDetailscomponent key={empList.bid} DeleteEmployee={DeleteEmployee} {...employee}></EmployeeDetailscomponent>
+                <EmployeeDetailscomponent key={empList.bid} Delete={DeleteEmployee} {...employee}></EmployeeDetailscomponent>
                 
 
             )
