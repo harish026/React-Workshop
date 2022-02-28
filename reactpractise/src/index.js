@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom";
-import App from "./hooks/StockSBI";
+import App from "./SinglePageApplication/MainComponent";
 // import Counter from "./ClassComponents/CounterComponent";
 // import employeeList from "./data/EmpList";
 

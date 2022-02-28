@@ -7,8 +7,7 @@ export default function EmployeeDetailscomponent(props){
               <div className="card-body">
                   <h5 className="card-title">{props.name}</h5>
                   <p className="card-text">{props.bid} <b>{props.createdAt}</b> Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <input type="button" id={props.bid} className="btn btn-primary" value="Delete" onClick={props.Delete} />
-                  <input type="button" id={props.bid} className="btn btn-warning" value="update" onClick={props.Update} />
+                  <input type="button" id={props.bid} className="btn btn-primary" value="Delete" onClick={props.delete} />
 
               </div>
           </div>

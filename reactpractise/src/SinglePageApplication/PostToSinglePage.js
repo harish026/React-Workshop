@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from "axios"
-// import EmployeeDetailsComponent from "../components/ApiSbaccountdetails"
 
 export default class PostToApi extends React.Component {
     constructor() {

@@ -1,9 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Link } from "react-router-dom";
-import HookUpdate from '../hooks/HookUpdate';
 import EmployeeDetailscomponent from '../components/EmployeeDetailscomponent';
 import PostComponent from "./PostToSinglePage";
-import EmployeeDetailsComponent from "../classComponent/EmployeeDetailsComponentAPI";
+import UpdateComponent from './UpdateComponent';
 export default class MainComponent extends React.Component {
     constructor() {
         super();
@@ -22,7 +21,7 @@ export default class MainComponent extends React.Component {
                         <nav>
                         <Link style={{margin: "10px"}} to="post">AddEmployee</Link>
                         </nav>
-                        <Route exact path="/" component={EmployeeDetailsComponent}></Route>
+                        <Route exact path="/" component={EmployeeDetailscomponent}></Route>
                         <Route exact path="/about" component={AboutComponent}></Route>
                         <Route exact path="/help" component={HelpComponent}></Route>
                         <Route exact path="/update/:userId" component={UpdateComponent}></Route>
